@@ -3,18 +3,24 @@ var ReactDOM = require('react-dom');
 
 // Create component
 var TodoComponent = React.createClass({
+    getInitialState: function(){
+        return {
+            todos: ['wash up', 'eat some chocolate', 'take a nap']
+        }
+    },
     render: function(){
         return(
-            <div>
-                <p><strong>Chocolate name: </strong>{ this.props.chocolate.name}</p>
-                <p><strong>Chocolate flavour: </strong>{ this.props.chocolate.flavour }</p>
-                <p><strong>Chocolate price: </strong>{ this.props.chocolate.price }</p>
+            <div id="todo-list">
+                <p>The busiest people have the most leisure</p>
+                <ul>
+                    <li>{this.state.todos[0]}</li>
+                    <li>{this.state.todos[1]}</li>
+                    <li>{this.state.todos[2]}</li>
+                </ul>
             </div>
         );
-    }
+    }// render
 });
 
-var myChocolate = { name: 'Marabou', flavour: 'Mint', price: '15.00'}
-
 // Put component into HTML page
-ReactDOM.render(<TodoComponent msg = "I like chocolate" chocolate = { myChocolate } />, document.getElementById('todo-wrapper'));
+ReactDOM.render(<TodoComponent  />, document.getElementById('todo-wrapper'));
