@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 require('./css/index.css');
 
 //import {Router, Route, browserHistory} from 'react-router';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 // Module requires
 var TodoItem = require('./todoItem');
@@ -42,6 +42,7 @@ var TodoComponent = React.createClass({
         }.bind(this));
         return(
             <div id="todo-list">
+                <Link to={"/about"}>About</Link>
                 <p>The busiest people have the most leisure...</p>
                 <ul>{todos}</ul>
                 <AddItem onAdd={this.onAdd} />

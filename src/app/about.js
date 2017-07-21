@@ -1,9 +1,14 @@
 var React = require('react');
 
+import { Link } from 'react-router-dom'
+
 var About = React.createClass({
     render: function(){
         return(
-            <h2>All about me</h2>
+            <div>
+                <h2>All about me</h2>
+                <Link to={"/"}>Home</Link>
+            </div>
         );
     }
 });
